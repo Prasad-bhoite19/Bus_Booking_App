@@ -68,7 +68,7 @@ bus_booking_app/
 ```
 pip install -r requirements.txt
 ```
-###🗄️ Step 2 — Setup the Database
+### 🗄️ Step 2 — Setup the Database
 ```
 mysql -u root -p < database/schema.sql
 ```
@@ -102,6 +102,7 @@ Place screenshots in /screenshots folder and link them like this:
 
 If you prefer direct image links (already hosted), replace the screenshots/... path with your hosted URL.
 
+-----
 ### 📦 8. Database:
 ```
 Create a simple database/schema.sql like:
@@ -131,6 +132,7 @@ CREATE TABLE bookings (
   FOREIGN KEY (bus_id) REFERENCES buses(id)
 );
 ```
+----
 ### ⚙️ 9. Deployment (quick tip)
 For production on AWS EC2:
 
@@ -146,7 +148,7 @@ If you want, I can provide a full deploy.md with exact commands.
 ### 📬 10. Author
 Prasad
 Cloud & DevOps Engineer — building simple, scalable apps.
-
+----
 ### ⭐ 11. Contribution & Support
 If you like this project:
 
@@ -155,7 +157,7 @@ If you like this project:
 🍴 Fork it
 
 🐛 Open issues or contribute PRs
-
+----
 ### 🔒 12. Notes
 This README is optimized for clarity and copying to README.md.
 
@@ -173,10 +175,9 @@ If you’d like to collaborate, discuss projects, or just say hello — feel fre
 
 - 🌐 [Portfolio Website](https://prasad-bhoite19.github.io/prasad-portfolio/)  
 - 💼 [LinkedIn](http://linkedin.com/in/prasad-bhoite-a38a64223)  
-- 🐙 [GitHub](https://github.com/Prasad-bhoite19))  
+- 🐙 [GitHub](https://github.com/Prasad-bhoite19) 
 - ✉️ [Email](prasadsb2002@gmail.com)   
 
----
 
 💬 Always open for opportunities in **Cloud, DevOps, and Full-Stack Projects**.
 
