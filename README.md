@@ -1,4 +1,4 @@
-🚌 Bus Booking App
+# 🚌 Bus Booking App
 
 A complete web-based **Bus Booking Application** that allows users to search, book, and manage bus tickets online.  
 Built using **Python (Flask)**, **MySQL**, and deployed on **AWS EC2** .
