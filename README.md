@@ -63,7 +63,7 @@ bus_booking_app/
 ---
 
 ## 📥 5. Installation & Setup
-------
+
 ### 🔧 Step 1 — Install Dependencies
 ```
 pip install -r requirements.txt
@@ -166,6 +166,7 @@ Replace placeholder screenshots and database credentials with your real data bef
 
 Made with ❤️ by Prasad
 
+----
 ## 📩 Connect With Me
 
 If you’d like to collaborate, discuss projects, or just say hello — feel free to reach out!
