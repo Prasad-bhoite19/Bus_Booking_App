@@ -157,6 +157,7 @@ If you like this project:
 🍴 Fork it
 
 🐛 Open issues or contribute PRs
+
 ----
 ### 🔒 12. Notes
 This README is optimized for clarity and copying to README.md.
@@ -168,8 +169,6 @@ Made with ❤️ by Prasad
 ## 📩 Connect With Me
 
 If you’d like to collaborate, discuss projects, or just say hello — feel free to reach out!
-
----
 
 ### 🔗 **Social & Professional Links**
 
