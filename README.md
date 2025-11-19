@@ -1,69 +1,184 @@
-# 🚌 Bus Booking App
+# 🚌 BUS BOOKING WEB APPLICATION
+*A Complete Online Bus Ticket Booking System — Flask + MySQL + AWS EC2*
 
-A complete web-based **Bus Booking Application** that allows users to search, book, and manage bus tickets online.  
-Built using **Python (Flask)**, **MySQL**, and deployed on **AWS EC2** .
+Welcome to the **Bus Booking App**, a lightweight and production-ready web application that lets users search buses, select routes, book seats, and download tickets — all through a simple, clean interface.
 
-🚀 Features
+---
 
-- 🔍 View available buses  
-- 🗺️ Select route and journey details  
-- 🎟️ Book a bus seat  
-- ⬇️ Download booking ticket as a file  
-- 💾 Data stored securely in MySQL database  
-- ⚡ Fast and lightweight web application    
+## 📌 1. Overview
 
- 🧱 Project Structure
+This is an end-to-end **Flask** project connected with **MySQL** and deployable on **AWS EC2**.  
+The application provides:
 
- bus_booking_app
+- ✔️ View available buses  
+- ✔️ Search route and journey date  
+- ✔️ Book a seat  
+- ✔️ Download ticket as a file  
+- ✔️ Data stored in MySQL  
+- ✔️ Fast, clean & user-friendly UI
+
+---
+
+## ⚙️ 2. Technologies Used
+
+| Category      | Technology        |
+|---------------|-------------------|
+| 🟦 Language   | Python 3          |
+| 🧪 Framework  | Flask             |
+| 🎨 Frontend   | HTML, CSS         |
+| 🗄️ Database   | MySQL             |
+| ☁️ Cloud      | AWS EC2           |
+| 🧰 Versioning | Git & GitHub      |
+
+---
+
+## 🧱 3. Project Structure
+```
+
+bus_booking_app/
 ├── app.py
-├── static
-│   └── style.css
-└── templates
-    ├── book.html
-    ├── index.html
-    ├── success.html
-    └── ticket.html
+├── database/
+│ └── schema.sql
+├── requirements.txt
+├── static/
+│ └── style.css
+└── templates/
+├── index.html
+├── book.html
+├── success.html
+└── ticket.html
+```
 
-⚙️ Technologies Used
 
-| Category | Technology |
-|-----------|-------------|
-| **Language** | Python 3 |
-| **Framework** | Flask |
-| **Frontend** | HTML, CSS |
-| **Database** | MySQL |
-| **Platform** | AWS EC2 (for hosting) |
-| **Version Control** | Git & GitHub |
+## 🚀 4. Features
 
-👉Install Dependencies
+- 🔍 Search and view available buses  
+- 🗺️ Route selection and journey date filters  
+- 🙍 Passenger information form and seat selection  
+- 🎟️ Instant booking confirmation  
+- ⬇️ Download ticket as HTML (use a converter to PDF if needed)  
+- 💾 Persistent storage in MySQL  
+- ⚡ Responsive and lightweight UI
+
+---
+
+## 📥 5. Installation & Setup
+------
+### 🔧 Step 1 — Install Dependencies
+```
 pip install -r requirements.txt
-
-👉Setup the Databas
+```
+###🗄️ Step 2 — Setup the Database
+```
 mysql -u root -p < database/schema.sql
-
-👉Run the Application
+```
+### ▶️ Step 3 — Run the Application (development)
+```
 python3 app.py
+🌐 Open in Browser
+Visit: http://127.0.0.1:5000/
+```
+### 🧠 6. How It Works
+```
+User visits homepage and sees available buses.
 
-Then open your browser and visit:
-👉 http://127.0.0.1:5000/
+User selects route + journey date and clicks Book.
 
-💡 How It Works
+User fills passenger details and confirms booking.
 
-1.The user opens the app and sees a list of available buses.
-2.The user selects the route and journey date.
-3.The user enters booking details (name, seat, etc.).
-4.After confirming, the user can download the ticket.
-5.Simple, clean, and easy to use. 
+System saves booking to MySQL and shows success page.
 
-📸 Screenshots
+User can download/open the ticket page (save as PDF if needed).
+```
+### 📸 7. Recommended Screenshots
 
-📸 Screenshots
+Place screenshots in /screenshots folder and link them like this:
 
-👉Available Buses
-<img width="1920" height="1080" alt="Screenshot 2025-10-04 123305" src="https://github.com/user-attachments/assets/6a75bf1d-5f19-4ae7-b62a-768c02b3af18" />
+🚌 Available Buses
 
-👉Booking Page
-<img width="1920" height="1080" alt="Screenshot 2025-10-04 114438" src="https://github.com/user-attachments/assets/b53ede4d-51aa-4b80-8186-3e8e95492147" />
+📝 Booking Page
 
-👉Ticket Download
-<img width="1920" height="1080" alt="Screenshot 2025-10-04 123448" src="https://github.com/user-attachments/assets/cd6aac69-a6f8-46d1-a1d6-c47f6f439c31" />
+🎟️ Ticket Download
+
+If you prefer direct image links (already hosted), replace the screenshots/... path with your hosted URL.
+
+### 📦 8. Database:
+```
+Create a simple database/schema.sql like:
+
+CREATE DATABASE IF NOT EXISTS bus_booking;
+USE bus_booking;
+
+CREATE TABLE buses (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  route_from VARCHAR(255),
+  route_to VARCHAR(255),
+  departure_time TIME,
+  arrival_time TIME,
+  price DECIMAL(8,2),
+  seats_total INT
+);
+
+CREATE TABLE bookings (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  bus_id INT,
+  passenger_name VARCHAR(255),
+  passenger_email VARCHAR(255),
+  seat_number VARCHAR(20),
+  journey_date DATE,
+  booked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (bus_id) REFERENCES buses(id)
+);
+```
+### ⚙️ 9. Deployment (quick tip)
+For production on AWS EC2:
+
+Use Gunicorn + Nginx (Gunicorn serves Flask, Nginx as reverse proxy).
+
+Secure MySQL (use RDS or secure EC2-hosted MySQL).
+
+Use environment variables for DB credentials.
+
+Configure firewall (security group) to allow only required ports (80/443).
+If you want, I can provide a full deploy.md with exact commands.
+
+### 📬 10. Author
+Prasad
+Cloud & DevOps Engineer — building simple, scalable apps.
+
+### ⭐ 11. Contribution & Support
+If you like this project:
+
+⭐ Star the repo
+
+🍴 Fork it
+
+🐛 Open issues or contribute PRs
+
+### 🔒 12. Notes
+This README is optimized for clarity and copying to README.md.
+
+Replace placeholder screenshots and database credentials with your real data before publishing.
+
+Made with ❤️ by Prasad
+
+## 📩 Connect With Me
+
+If you’d like to collaborate, discuss projects, or just say hello — feel free to reach out!
+
+---
+
+### 🔗 **Social & Professional Links**
+
+- 🌐 [Portfolio Website](https://prasad-bhoite19.github.io/prasad-portfolio/)  
+- 💼 [LinkedIn](http://linkedin.com/in/prasad-bhoite-a38a64223)  
+- 🐙 [GitHub](https://github.com/Prasad-bhoite19))  
+- ✉️ [Email](prasadsb2002@gmail.com)   
+
+---
+
+💬 Always open for opportunities in **Cloud, DevOps, and Full-Stack Projects**.
+
+
+
