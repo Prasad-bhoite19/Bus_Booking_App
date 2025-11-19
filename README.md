@@ -145,6 +145,7 @@ Use environment variables for DB credentials.
 Configure firewall (security group) to allow only required ports (80/443).
 If you want, I can provide a full deploy.md with exact commands.
 
+----
 ### 📬 10. Author
 Prasad
 Cloud & DevOps Engineer — building simple, scalable apps.
